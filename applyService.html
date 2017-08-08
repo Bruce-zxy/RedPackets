@@ -15,21 +15,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 为移动设备添加 viewport -->
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>关于我们</title>
+    <title>申请服务</title>
     <link rel="stylesheet" type="text/css" href="./css/man.min.css" />
     <script type="text/javascript" src="./js/response.js"></script>
 
 </head>
 <!------分------割------线------>
-<body>
+<body style="background: #F1F1F1;">
 
     <header class="d_flex">
         <a class="icon-back" href="./index.html"></a>
-        <span class="title">关于我们</span>
+        <span class="title">申请服务</span>
     </header>
 
-    
+    <div id="service" class="d_flex">
+        <div class="scene_choice">
+            <p class="s_title">
+                <i class="icon-service1"></i>
+                <span>场景选择</span>
+            </p>
+            <div class="s_card d_flex">
+                <div class="card active"><i class="icon-service4"></i><span>线上电子卡片</span></div>
+                <div class="card"><i class="icon-service5"></i><span>线下印刷卡片</span></div>
+            </div>
+        </div>
+        <div class="amount">
+            <p class="s_title">
+                <i class="icon-service2"></i>
+                <span>红包金额范围</span>
+            </p>
+            <div class="amount_range d_flex">
+                <span>金额范围</span>
+                <span class="range d_flex">
+                    <input placeholder="0" type="number">
+                    <span></span>
+                    <input placeholder="1000" type="number">
+                </span>
+            </div>
+        </div>
+        <div class="num_choice">
+            <p class="s_title">
+                <i class="icon-service3"></i>
+                <span>数量选择</span>
+            </p>
+            <div class="num_count d_flex">
+                <span>购买数量</span>
+                <span class="count">
+                    <span class="count_add"><b></b><i></i></span>
+                    <input class="count_input" placeholder="1" type="num" value="1">
+                    <span class="count_sub"><b></b></span>
+                </span>
+            </div>
+            <p class="back_color">单价：0.1元</p>
+        </div>
+        <div class="payment">
+            <p class="s_title">
+                <i class="icon-service6"></i>
+                <span>微信支付</span>
+                <input type="radio" class="weixin">
+            </p>
+        </div>
+        <div class="for_ipad"></div>
+    </div>    
+
+    <div id="sub_footer" class="d_flex">
+        <div class="sum_price d_flex">合计：<span class="price">0.00 元</span></div>
+        <div class="pay"><a href="javascript:;">立即付款</a></div>
+    </div>
 
 </body>
+<script type="text/javascript">
+    var divs = getClass('card');
+    for (i in divs) {
+        divs[i].onclick = function() {
+            for (i in divs) divs[i].className = 'card';
+            this.className = 'card active';
+        }
+    }
+    getClass('payment')[0].onclick = function() {
+        getClass('weixin')[0].checked = 'checked'
+    }
+    getClass('count_add')[0].onclick = function() {
+        getClass('count_input')[0].value++;
+    }
+    getClass('count_sub')[0].onclick = function() {
+        if (getClass('count_input')[0].value == 0) {
+            return;
+        }
+        getClass('count_input')[0].value--;
+    }
+
+</script>
 <!------分------割------线------>
 </html>
