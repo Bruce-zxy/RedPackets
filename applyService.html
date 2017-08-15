@@ -79,27 +79,38 @@
     </div>    
 
     <div id="sub_footer" class="d_flex">
-        <div class="sum_price d_flex">合计：<span class="price">0.00 元</span></div>
+        <div class="sum_price d_flex">合计：<span class="price">0.00 </span>元</div>
         <div class="pay"><a href="javascript:;">立即付款</a></div>
     </div>
 
 </body>
 <script type="text/javascript">
     var divs = getClass('card');
+    var inputs = document.querySelectorAll('input');
     for (i in divs) {
         divs[i].onclick = function() {
             for (i in divs) divs[i].className = 'card';
             this.className = 'card active';
         }
     }
+    for (i in inputs) {
+        inputs[i].onblur = function () {
+            this.value < 0 ? this.value = 0 : '';
+        }
+    }
     getClass('payment')[0].onclick = function() {
         getClass('weixin')[0].checked = 'checked'
     }
     getClass('count_add')[0].onclick = function() {
+        if (getClass('count_input')[0].value <= 0) {
+            getClass('count_input')[0].value = 1;
+            return;
+        }
         getClass('count_input')[0].value++;
     }
     getClass('count_sub')[0].onclick = function() {
-        if (getClass('count_input')[0].value == 0) {
+        if (getClass('count_input')[0].value <= 0) {
+            getClass('count_input')[0].value = 0;
             return;
         }
         getClass('count_input')[0].value--;
