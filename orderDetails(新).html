@@ -16,6 +16,7 @@
     <!-- 为移动设备添加 viewport -->
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>订单详情</title>
+    <link rel="stylesheet" type="text/css" href="./css/lightbox.min.css">
     <link rel="stylesheet" type="text/css" href="./css/man.min.css" />
     <script type="text/javascript" src="./js/response.js"></script>
 </head>
@@ -34,7 +35,9 @@
         </div>
         <div class="details_content">
             <div class="list_content d_flex">
-                <img src="images/qrcode.png" alt="">
+                <a href="javascript:;" data-lightbox="image" data-title="长按保存二维码">
+                    <img src="./images/qrcode.png" alt="">
+                </a>
                 <span class="right d_flex">
                     <p><span>[金鹰百货]</span>商城十周年十日狂欢庆典活动优惠红包</p>
                     <span>可用红包数量：<span>2000</span></span>
@@ -48,7 +51,9 @@
         </div>
         <div class="details_content">
             <div class="list_content d_flex">
-                <img src="images/qrcode.png" alt="">
+                <a href="javascript:;" data-lightbox="image" data-title="长按保存二维码">
+                    <img src="./images/qrcode.png" alt="">
+                </a>
                 <span class="right d_flex">
                     <p><span>[金鹰百货]</span>商城十周年十日狂欢庆典活动优惠红包</p>
                     <span>可用红包数量：<span>2000</span></span>
@@ -62,7 +67,9 @@
         </div>
         <div class="details_content">
             <div class="list_content d_flex">
-                <img src="images/qrcode.png" alt="">
+                <a href="javascript:;" data-lightbox="image" data-title="长按保存二维码">
+                    <img src="./images/c_w_img.png" alt="">
+                </a>
                 <span class="right d_flex">
                     <p><span>[金鹰百货]</span>商城十周年十日狂欢庆典活动优惠红包</p>
                     <span>可用红包数量：<span>2000</span></span>
@@ -76,7 +83,9 @@
         </div>
         <div class="details_content">
             <div class="list_content d_flex">
-                <img src="images/qrcode.png" alt="">
+                <a href="javascript:;" data-lightbox="image" data-title="长按保存二维码">
+                    <img src="./images/order_list1.png" alt="">
+                </a>
                 <span class="right d_flex">
                     <p><span>[金鹰百货]</span>商城十周年十日狂欢庆典活动优惠红包</p>
                     <span>可用红包数量：<span>2000</span></span>
@@ -95,16 +104,27 @@
         <div class="for_ipad"></div>
     </div>
 </body>
+<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./js/lightbox.min.js"></script>
 <script type="text/javascript">
-    var aList = document.querySelectorAll('.details_title a');
-    for (i in aList) {
-        aList[i].onclick = function(){
-            for (i in aList) {
-                aList[i].className = '';
+    $(function () {
+        var aList = document.querySelectorAll('.details_title a');
+        for (i in aList) {
+            aList[i].onclick = function(){
+                for (i in aList) {
+                    aList[i].className = '';
+                }
+                this.className = 'active';
             }
-            this.className = 'active';
         }
-    }
+        var a = $('.list_content>a');
+        var len = a.length;
+        for (var i = 0; i < len; i++) {
+            a[i].href = a[i].children[0].src;
+            a[i].setAttribute('data-lightbox', 'image-'+i);
+        }
+    })
+    
 </script>
 <!------分------割------线------>
 

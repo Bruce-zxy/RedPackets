@@ -44,30 +44,18 @@
                 <i class="icon-order2"></i>
                 <span>二维码预览</span>
             </p>
-            <div class="info_form d_flex">
+            <div class="info_form d_flex" style="flex-direction: row">
                 <img src="images/qrcode.png" alt="">
+                <div class="copy_link">
+                    <p>微砍价萌动一夏活动</p>
+                    <p>http://www.1234567890.com</p>
+                    <p><a class="next_step" href="javascript:;">复制链接</a></p>
+                </div>
             </div>
+            <p class="aux_msg"><span class="aux_circle"></span><span>或点击左侧二维码保存到手机即可</span></p>
         </div>
-        <a  class="next_step" href="javascript:;">二维码下载</a>
         <div class="for_ipad"></div>
     </div>
-
 </body>
-<script type="text/javascript">
-    var spans = getClass('list');
-    for (i in spans) {
-        if (spans.hasOwnProperty(i)) {
-            spans[i].onclick = changeList;
-        }
-    }
-    function changeList() {
-        for (i in spans) {
-            if (spans.hasOwnProperty(i)) {
-                spans[i].children[1].style.backgroundImage = 'url(./images/icons/icon-offline4.png)';
-            }
-        }
-        this.children[1].style.backgroundImage = 'url(./images/icons/icon-offline5.png)';
-    }
-</script>
 <!------分------割------线------>
 </html>
