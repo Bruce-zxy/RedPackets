@@ -17,6 +17,7 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>下单成功</title>
     <link rel="stylesheet" type="text/css" href="./css/man.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/lightbox.min.css">
     <script type="text/javascript" src="./js/response.js"></script>
 
 </head>
@@ -45,10 +46,12 @@
                 <span>二维码预览</span>
             </p>
             <div class="info_form d_flex" style="flex-direction: row">
-                <img src="images/qrcode.png" alt="">
+                <a href="javascript:;" data-lightbox="image" data-title="长按保存二维码">
+                    <img src="images/qrcode.png" alt="">
+                </a>
                 <div class="copy_link">
-                    <p>微砍价萌动一夏活动</p>
-                    <p>http://www.1234567890.com</p>
+                    <p>微砍价萌动一夏活动微砍价萌动一夏活动微砍价萌动一夏活动微砍价萌动一夏活动微砍价萌动一夏活动微砍价萌动一夏活动</p>
+                    <p>http://www.1234567890.comhttp://www.1234567890.comhttp://www.1234567890.comhttp://www.1234567890.comhttp://www.1234567890.comhttp://www.1234567890.com</p>
                     <p><a class="next_step" href="javascript:;">复制链接</a></p>
                 </div>
             </div>
@@ -57,5 +60,12 @@
         <div class="for_ipad"></div>
     </div>
 </body>
+<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./js/lightbox.min.js"></script>
+<script type="text/javascript">
+    var a = document.querySelector('.info_form>a');
+    a.href = a.children[0].src;
+    a.setAttribute('data-lightbox', 'image-1');
+</script>
 <!------分------割------线------>
 </html>
