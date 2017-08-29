@@ -5,7 +5,9 @@
 
     function refreshRem() {
         var width = docEl.getBoundingClientRect().width;
-        if (width > 640) width = 640;
+        // if (width > 640) width = 640;
+        // var rem = width / 6.4;
+        if (width > 768) width = 768;
         var rem = width / 6.4;
         docEl.style.fontSize = rem + 'px'
     }
