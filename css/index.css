@@ -1,5 +1,5 @@
-body, html { margin: 0; height: 100%; color: #383838; -webkit-tap-highlight-color: transparent }
-a, a:active, a:hover, a:link { text-decoration: none; color: #383838; outline: 0; -webkit-tap-highlight-color: transparent }
+body, html { margin: 0; height: 100%; color: #333; overflow: hidden; -webkit-tap-highlight-color: transparent }
+a, a:active, a:hover, a:link { text-decoration: none; outline: 0; -webkit-tap-highlight-color: transparent }
 p { margin: 0 auto }
 .d_flex { display: -webkit-flex; display: flex }
 
@@ -7,15 +7,21 @@ header { align-items: center; justify-content: center; position: fixed; z-index:
 header .icon-back { position: absolute; padding: .1rem; background: 0 0; left: .3rem; top: .3rem; border: .04rem solid #666; border-top: transparent; border-right: transparent; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg) }
 header .title { font-size: .35rem }
 
-#content {
-	margin-top: .8rem;
-	background-color: #fff
-}
-#content .banner {
-	position: relative;
-}
-.banner_1 .f_c {
-	position: absolute;
-	top: calc(50% - 25px);
-	height: 25px;
-}
+#content { margin-top: .8rem; height: calc(100% - .8rem); background-color: #fff; overflow: hidden; }
+#content .banner { position: relative; }
+#content .banner_1 { height: 20%; }
+#content .banner_2 { height: 20%; }
+#content .banner_3 { height: 30%; font-size: 0 }
+#content .banner_4 { height: 30%; }
+.banner_1 .f_c { position: absolute; top: calc(50% - .3rem); left: .8rem; height: .6rem; }
+.banner_1 .l_c { position: absolute; top: .1rem; z-index: 99; right: .7rem; height: 2rem; }
+.banner_2>div { position: relative; z-index: 10; height: 100%; padding: .6rem .4rem; background-image: url('../images/banner-red.png'); background-position: center; background-size: auto 100%; }
+.banner_2>div p { color: #fff; font-size: .18rem; text-align: center; }
+
+.banner_3 span { display: inline-block; width: calc(50% - .6rem); float: left; position: relative; font-size: .2rem; padding: .6rem .3rem; }
+.banner_3 span img { height: 1.8rem; position: absolute; top: .5rem; left: calc(50% - .8rem); }
+.banner_3 span p.en { margin-bottom: .2rem; }
+.banner_4 span { display: inline-block; width: calc(50% - .6rem); float: left; position: relative; font-size: .2rem; padding: .6rem .3rem; }
+.banner_4 span img { height: 1.8rem; position: absolute; top: .5rem; left: .5rem; }
+.banner_4 span p { text-align: right }
+.banner_4 span p.en { margin-bottom: .2rem; }
