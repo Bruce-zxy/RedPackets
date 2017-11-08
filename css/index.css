@@ -1,28 +1,25 @@
-body, html { margin: 0; height: 100%; color: #333; overflow: hidden; -webkit-tap-highlight-color: transparent }
+body, html { margin: 0; height: 100%; color: #333; /*overflow: hidden;*/ -webkit-tap-highlight-color: transparent }
 a, a:active, a:hover, a:link { text-decoration: none; outline: 0; -webkit-tap-highlight-color: transparent }
 p { margin: 0 auto }
 .d_flex { display: -webkit-flex; display: flex }
 
-header { align-items: center; justify-content: center; position: fixed; z-index: 999; top: 0; height: .8rem; width: 100%; background: #fff;box-shadow: 0 1px 1px #eee; }
-header .icon-back { position: absolute; padding: .1rem; background: 0 0; left: .3rem; top: .3rem; border: .04rem solid #666; border-top: transparent; border-right: transparent; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg) }
-header .title { font-size: .35rem }
-
-#content { margin-top: .8rem; height: calc(100% - .8rem); background-color: #fff; overflow: hidden; }
+body { height: 100%; }
+#content { height: 100%; background-color: #fff; }
 #content .banner { position: relative; }
 #content .banner_1 { height: 20%; }
 #content .banner_2 { height: 20%; }
 #content .banner_3 { height: 30%; font-size: 0 }
-#content .banner_4 { height: 30%; }
+#content .banner_4 { height: 30%; font-size: 0 }
 .banner_1 .f_c { position: absolute; top: calc(50% - .3rem); left: .8rem; height: .6rem; }
 .banner_1 .l_c { position: absolute; top: .1rem; z-index: 99; right: .7rem; height: 2rem; }
 .banner_2>div { position: relative; z-index: 10; height: 100%; padding: .6rem .4rem; background-image: url('../images/banner-red.png'); background-position: center; background-size: auto 100%; }
 .banner_2>div p { color: #fff; font-size: .18rem; text-align: center; }
 
-.banner_3 span { display: inline-block; width: calc(50% - .6rem); float: left; position: relative; font-size: .2rem; padding: .6rem .3rem; }
+.banner_3 span { display: inline-block; width: calc(50% - .6rem); float: left; position: relative; font-size: .2rem; padding: .5rem .3rem 0 .3rem; }
 .banner_3 span img { height: 1.8rem; position: absolute; top: .5rem; left: calc(50% - .8rem); }
 .banner_3 span p.en { margin-bottom: .2rem; }
-.banner_4 span { display: inline-block; width: calc(50% - .6rem); float: left; position: relative; font-size: .2rem; padding: .6rem .3rem; }
-.banner_4 span img { height: 1.8rem; position: absolute; top: .5rem; left: .5rem; }
+.banner_4 span { display: inline-block; width: calc(50% - .6rem); float: left; font-size: .2rem; margin: 0; padding: .4rem .3rem 0 .3rem; }
+.banner_4 span img { display: inline-block; height: 1.8rem; }
 .banner_4 span p { text-align: right }
 .banner_4 span p.en { margin-bottom: .2rem; }
 
@@ -32,3 +29,9 @@ header .title { font-size: .35rem }
 .link img:last-child { height: 4.5rem; position: relative; top: 1rem; left: 45%; }
 .link a { color: #126fd9; font-size: .3rem; margin-bottom: .3rem }
 .link span { display: block; width: 2px; height: .4rem; background-color: #000; position: relative; left: calc(50% - 1px); margin-bottom: .3rem; -webkit-transform: rotate(20deg); -moz-transform: rotate(20deg); -ms-transform: rotate(20deg); -o-transform: rotate(20deg); transform: rotate(20deg); }
+
+@media screen and (min-width:640px) {
+	.banner_1, .banner_2 { min-height: 200px; }
+	.banner_3, .banner_4 { min-height: 300px; }
+}
+
