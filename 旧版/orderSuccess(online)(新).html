@@ -17,7 +17,6 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>下单成功</title>
     <link rel="stylesheet" type="text/css" href="./css/man.min.css" />
-    <link rel="stylesheet" type="text/css" href="./css/lightbox.min.css">
     <script type="text/javascript" src="./js/response.js"></script>
 
 </head>
@@ -45,27 +44,30 @@
                 <i class="icon-order2"></i>
                 <span>二维码预览</span>
             </p>
-            <div class="info_form d_flex" style="flex-direction: row">
-                <a href="javascript:;" data-lightbox="image" data-title="长按保存二维码">
-                    <img src="images/qrcode.png" alt="">
-                </a>
-                <div class="copy_link">
-                    <p>微砍价萌动一夏活动微砍价萌动一夏活动微砍价萌动一夏活动微砍价萌动一夏活动微砍价萌动一夏活动微砍价萌动一夏活动</p>
-                    <p>这是一个互动简介这是一个互动简介这是一个互动简介这是一个互动简介这是一个互动简介这是一个互动简介这是一个互动简介这是一个互动简介这是一个互动简介这是一个互动简介这是一个互动简介</p>
-                </div>
+            <div class="info_form d_flex">
+                <img src="images/qrcode.png" alt="">
             </div>
-            <p class="aux_msg"><span class="aux_circle"></span><span>或点击左侧二维码保存到手机即可</span></p>
         </div>
-        <a class="next_step" href="javascript:;">复制链接</a>
+        <a  class="next_step" href="javascript:;">二维码下载</a>
         <div class="for_ipad"></div>
     </div>
+
 </body>
-<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="./js/lightbox.min.js"></script>
 <script type="text/javascript">
-    var a = document.querySelector('.info_form>a');
-    a.href = a.children[0].src;
-    a.setAttribute('data-lightbox', 'image-1');
+    var spans = getClass('list');
+    for (i in spans) {
+        if (spans.hasOwnProperty(i)) {
+            spans[i].onclick = changeList;
+        }
+    }
+    function changeList() {
+        for (i in spans) {
+            if (spans.hasOwnProperty(i)) {
+                spans[i].children[1].style.backgroundImage = 'url(./images/icons/icon-offline4.png)';
+            }
+        }
+        this.children[1].style.backgroundImage = 'url(./images/icons/icon-offline5.png)';
+    }
 </script>
 <!------分------割------线------>
 </html>
